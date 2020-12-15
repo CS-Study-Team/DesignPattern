@@ -29,7 +29,7 @@ open class Display : Hardware() {
 
 open class NetworkChip : Hardware() {
     override fun toString(): String {
-        return if (powerSource == null) "none power source" else "samsung display"
+        return if (powerSource == null) "none power source" else "LTE network"
     }
 }
 
