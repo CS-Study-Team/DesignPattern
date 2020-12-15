@@ -24,22 +24,21 @@ open class Battery(private val amp: String) : Material() {
     }
 }
 
-abstract class Hardware(protected val powerSource: Battery) : Material()
 
-open class Display(private val inch: String, battery: Battery) : Hardware(battery) {
-    constructor(src: Display): this(src.inch, src.powerSource)
+open class Display(private val inch: String) : Material() {
+    constructor(src: Display): this(src.inch)
     override fun toString(): String {
-        return "display $inch, power source $powerSource"
+        return "display $inch"
     }
     override fun clone(): Material {
         return Display(this)
     }
 }
 
-open class NetworkChip(private val generation: String, battery: Battery) : Hardware(battery) {
-    constructor(src: NetworkChip): this(src.generation, src.powerSource)
+open class NetworkChip(private val generation: String) : Material() {
+    constructor(src: NetworkChip): this(src.generation)
     override fun toString(): String {
-        return "$generation, power source $powerSource"
+        return generation
     }
 
     override fun clone(): Material {
@@ -78,8 +77,6 @@ class GalaxyPrototypeFactory(
     }
 }
 
-class _5GNetworkChip(battery: Battery) : NetworkChip("5G chip", battery)
-
 class Samsung {
     fun createPhone(factory: GalaxyPrototypeFactory): GalaxyPhone {
         return factory.createPhone(
@@ -95,15 +92,15 @@ fun main() {
     val samsung = Samsung()
     val s10Battery = Battery("3400mAh")
     val s10Factory = GalaxyPrototypeFactory(
-            NetworkChip("LTE", s10Battery),
-            Display("6.1", s10Battery),
+            NetworkChip("LTE"),
+            Display("6.1"),
             s10Battery
     )
 
     val s10_5GBattery = Battery("4500mAh")
     val s10_5GFactory = GalaxyPrototypeFactory(
-            NetworkChip("5G", s10_5GBattery),
-            Display("6.7", s10_5GBattery),
+            NetworkChip("5G"),
+            Display("6.7"),
             s10_5GBattery
     )
 
