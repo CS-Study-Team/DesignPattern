@@ -101,7 +101,3 @@ HTMLConverter htmlConverter;
 asciiText = reader.CreateASCIIText(asciiConverter);
 htmlText = reader.CreateHTMLText(htmlConverter);
 ```
-
-
-
-
