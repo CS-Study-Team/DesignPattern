@@ -9,7 +9,7 @@
 <br>
 
 빌더패턴의 참여자로는
-- Director : Builder가 만든 부품을 조합해 Product를 만드는 역할
+- Director : Builder가 만든 부품을 조합해 Product를 만드는 역할 (생성의 책임을 Builder에 위임)
 - Builder : Builder 인터페이스
 - ConcreteBuilder : Builder 인터페이스 구현체
 - Product : Director가 Builder가 만든 부품을 조합해 만든 결과물
@@ -19,6 +19,7 @@
 <br>
 
 ### 예시
+
 RTFReader(Director)는 RTF 문서를 판독한 후(parse) 문서 변환(convert)을 거쳐 ASCIIText(Product)를 얻고 싶다. 빌더패턴을 이용하면, <br>
 - RTFReader내부에서 RTF 문서의 parse 작업이 이루어진다.
 - parse된 작업물을 RTFReader의 지시에 따라 Builder가 변환하는 작업을 한다.
@@ -37,7 +38,7 @@ ASCIIText* RTFReader::CreateASCIIText(ASCIIConverter builder){
 };
 ```
 
-ASCIIConverter는 Builder 인터페이스를 구현한 ConcreteBuilder이다. Builder 인터페이스는 Product의 생성 과정을 반영한다. 아래는 ASCIIConverter의 모체인 Converter라는 Builder 인터페이스이다.
+ASCIIConverter는 Builder 인터페이스를 구현한 ConcreteBuilder이다. Builder 인터페이스는 Product의 생성 과정을 반영한다. 아래는 ASCIIConverter의 모체인 Converter라는 Builder 인터페이스이다. C++로 구현할 때는 Builder 인터페이스에 정의된 메소드를 의도적으로 가상 함수로 정의하는 대신, 구현부를 비워두는 것이 더 바람직하다. 이렇게 하면 Builder의 서브클래스에서 Builder에 정의된 모든 메소드를 구현할 필요없이, 필요한 메소드만 재정의할 수 있게 된다.
 ```cpp
 class Converter {
     public:
@@ -86,7 +87,7 @@ void ASCIIConverter::GetText(){
 }
 ```
 
-또한, RTFReader(Director)는 ASCIIText외에 다른 종류의 변환된 Text를 얻고 싶을수도 있다. 예를 들어 HTML 포맷의 Text를 얻고 싶다고 가정하자. 이럴 때는 Converter(Builder) 인터페이스를 상속하여 HTMLConverter라는 ConcreteBuilder를 구현하면 된다. HTMLConverter를 `RTFReader::CreateHTMLText(HTMLConverter builder)`메소드의 매개변수로 넘기고 RTFReader에서 HTMLText(Product)의 구현 방법을 `builder`에 지시하여, HTMLText의 생성을 완성할 수 있다.
+또한, RTFReader(Director)는 ASCIIText외에 다른 종류의 변환된 Text를 얻고싶을 수도 있다. 예를 들어 HTML 포맷의 Text를 얻고 싶다고 가정하자. 이럴 때는 Converter(Builder) 인터페이스를 상속하여 HTMLConverter라는 ConcreteBuilder를 구현하면 된다. HTMLConverter를 `RTFReader::CreateHTMLText(HTMLConverter builder)`메소드의 매개변수로 넘기고 RTFReader에서 HTMLText(Product)의 구현 방법을 `builder`에 지시하여, HTMLText의 생성을 완성할 수 있다.
 
 사용자는 최종적으로 Director와 ConcreteBuilder를 아래와 같이 이용할 수 있다.
 ```cpp
@@ -101,3 +102,7 @@ HTMLConverter htmlConverter;
 asciiText = reader.CreateASCIIText(asciiConverter);
 htmlText = reader.CreateHTMLText(htmlConverter);
 ```
+### 정리
+> Director는 Director 내부에서 정의한 메소드에 Builder의 서브 클래스를 매개변수로 넘겨, 제품에 대한 내부 표현을 통해 최종 제품의 산출물을 얻어낼 수 있다. 이 때 제품 내부 표현은 Director가 관장하며, 제품 생성 및 부품 추가는 Builder에 위임한다.
+- 제품의 내부 표현을 다양하게 할 수 있다.
+- 제품의 표현(Director)과 생성(Builder)을 분리할 수 있다. 
