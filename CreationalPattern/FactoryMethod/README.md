@@ -45,3 +45,45 @@ interface Document {
   fun revert()
 }
 ```
+
+팩토리 메서드 패턴을 구현하는 방법은 크게 두 가지가 있다. 
+- 앞선 예시처럼 Creator(TextEditor)를 추상 클래스로 정의하고, 정의한 팩토리 메소드에 대한 구현을 제공하지 않는 경우. 정의한 팩토리 메소드 역시 추상 메소드로 지정한다.
+- Creator(TextEditor)를 구체 클래스로 정의하고, 팩토리 메소드의 디폴트 구현을 제공하는 경우
+  - 팩토리 메서드를 매개변수화 할 수도 있다.
+
+```kotlin
+// type: DocumentType 이라는 Enum 변수를 매개변수로 넘기면 팩토리 메서드가 매개변수를 받아서 어떤 종류의 제품을 생성할지 식별할 수 있다. 여기서는 제공 문서를 Java, Kotlin, Cpp를 기본값으로 정의하였는데, TextEditor의 서브클래스에서 이를 오버라이드하여 문서 생성에 대한 로직을 더 추가할 수도 있을 것이다.
+class TextEditor {
+  protected fun createDocument(type: DocumentType): Document {
+    when(type){
+      DocumentType.JAVA -> JavaDocument()
+      DocumentType.KOTLIN -> KotlinDocument()
+      DocumentType.CPP -> CppDocument()
+    }
+  }
+}
+```
+
+팩토리 메서드를 쓰면 Document 클래스를 추가하려 할 때마다 서브클래싱을 해야한다. MSWordTextEditor는 .docx 포맷의 문서를 반환 받는다고 가정하자. DocxDocument() 클래스를 추가하려면 이를 반환받으려는 TextEditor의 서브 클래스인 MSWordTextEditor를 만들어야 한다. 이 과정은 반복적이기 때문에, 템플릿을 사용하여 피해야 한다.
+```kotlin
+abstract class TextEditor {
+  protected abstract fun createDocument(): Document
+ 
+  fun create(): Document {
+    return createDocument()
+  }
+}
+
+// TextEditor을 상속한다.
+class MSWordTextEditor: TextEditor {
+  override fun createDocument(): Document {
+    return DocxDocument()
+  }
+}
+```
+ 
+### 정리
+---
+팩토리 메소드 패턴을 이용할 경우
+- 응용 프로그램의 프레임워크 레벨에서 구체 클래스에 대한 정보를 은닉할 수 있다.
+- 동시에 프레임워크가 추상 클래스를 인스턴스화하지 못한다는 단점도 해결한다.
