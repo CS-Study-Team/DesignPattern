@@ -27,8 +27,8 @@ RTFReader(Director)는 RTF 문서를 판독한 후(parse) 문서 변환(convert)
 
 
 ```cpp
-// CreateASCIIText 메소드에는 Director인 RTFReader가 Builder에게 한 지시가 정의되어 있다.
-ASCIIText* RTFReader::CreateASCIIText(ASCIIConverter builder){
+// CreateText 메소드에는 Director인 RTFReader가 Builder에게 한 지시가 정의되어 있다.
+Text* RTFReader::CreateText(Converter builder){
     builder.BuildText(); // 먼저 아무것도 가미되지 않은 original Text를 생성.
     builder.BuildFont();
     builder.BuildPartA();
@@ -87,7 +87,7 @@ void ASCIIConverter::GetText(){
 }
 ```
 
-또한, RTFReader(Director)는 ASCIIText외에 다른 종류의 변환된 Text를 얻고싶을 수도 있다. 예를 들어 HTML 포맷의 Text를 얻고 싶다고 가정하자. 이럴 때는 Converter(Builder) 인터페이스를 상속하여 HTMLConverter라는 ConcreteBuilder를 구현하면 된다. HTMLConverter를 `RTFReader::CreateHTMLText(HTMLConverter builder)`메소드의 매개변수로 넘기고 RTFReader에서 HTMLText(Product)의 구현 방법을 `builder`에 지시하여, HTMLText의 생성을 완성할 수 있다.
+또한, RTFReader(Director)는 ASCIIText외에 다른 종류의 변환된 Text를 얻고싶을 수도 있다. 예를 들어 HTML 포맷의 Text를 얻고 싶다고 가정하자. 이럴 때는 Converter(Builder) 인터페이스를 상속하여 HTMLConverter라는 ConcreteBuilder를 구현하면 된다. HTMLConverter를 `RTFReader::CreateText(Converter builder)`메소드의 매개변수로 넘기고 RTFReader에서 HTMLText(Product)의 구현 방법을 `builder`에 지시하여, HTMLText의 생성을 완성할 수 있다.
 
 사용자는 최종적으로 Director와 ConcreteBuilder를 아래와 같이 이용할 수 있다.
 ```cpp
@@ -99,8 +99,8 @@ RTFReader reader;
 ASCIIConverter asciiConverter;
 HTMLConverter htmlConverter;
 
-asciiText = reader.CreateASCIIText(asciiConverter);
-htmlText = reader.CreateHTMLText(htmlConverter);
+asciiText = reader.CreateText(asciiConverter);
+htmlText = reader.CreateText(htmlConverter);
 ```
 ### 정리
 > Director는 Director 내부에서 정의한 메소드에 Builder의 서브 클래스를 매개변수로 넘겨, 제품에 대한 내부 표현을 통해 최종 제품의 산출물을 얻어낼 수 있다. 이 때 제품 내부 표현은 Director가 관장하며, 제품 생성 및 부품 추가는 Builder에 위임한다.
