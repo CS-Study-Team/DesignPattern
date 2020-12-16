@@ -19,9 +19,9 @@ Gof의 디자인 패턴책 뽀개기
 - [Builder](CreationalPattern/Builder) - 정린
 - [Factory Method](CreationalPattern/FactoryMethod) - 정린
 - [Prototype](CreationalPattern/Prototype) - 이재성
-- [Singleton](CreationalPattern/Singleton) - N/A
+- [Singleton](CreationalPattern/Singleton) - 김태성
 ### [**Structural Pattern**](StructuralPattern)
-- [Adapter](StructuralPattern/Adapter) - N/A
+- [Adapter](StructuralPattern/Adapter) - 김태성
 - [Bridge](StructuralPattern/Bridge) - N/A
 - [Composite](StructuralPattern/Composite) - N/A
 - [Decorator](StructuralPattern/Decorator) - N/A
