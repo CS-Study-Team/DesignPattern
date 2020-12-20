@@ -22,12 +22,12 @@ Gof의 디자인 패턴책 뽀개기
 - [Singleton](CreationalPattern/Singleton) - 김태성
 ### [**Structural Pattern**](StructuralPattern)
 - [Adapter](StructuralPattern/Adapter) - 김태성
-- [Bridge](StructuralPattern/Bridge) - N/A
-- [Composite](StructuralPattern/Composite) - N/A
-- [Decorator](StructuralPattern/Decorator) - N/A
-- [Facade](StructuralPattern/Facade) - N/A
-- [Flyweight](StructuralPattern/Flyweight) - N/A
-- [Proxy](StructuralPattern/Proxy) - N/A
+- [Bridge](StructuralPattern/Bridge) - 이오형
+- [Composite](StructuralPattern/Composite) - 이오형
+- [Decorator](StructuralPattern/Decorator) - 이오형
+- [Facade](StructuralPattern/Facade) - 이오형
+- [Flyweight](StructuralPattern/Flyweight) - 정린
+- [Proxy](StructuralPattern/Proxy) - 정린
 ### [**Behavioral Pattern**](CreationalPattern)
 - [Chain of Responsibility](BehavioralPattern/ChainOfResponsibility) - N/A
 - [Command](BehavioralPattern/Command) - N/A
