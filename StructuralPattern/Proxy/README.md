@@ -17,7 +17,8 @@
 ## 사용방법
 ### 가상 프록시의 사례
 틱톡과 같은 쇼트 클립 어플리케이션을 개발한다고 가정하자. 영상이 로딩되기 전까지 로딩 아이콘을 띄워놓고, 그 밖에 가벼운 데이터는 클라이언트에게 빠르게 보여주고 싶다. 
-![screensh](https://raw.githubusercontent.com/CS-Study-Team/DesignPattern/jjjlyn-patch-2/StructuralPattern/Proxy/tiktok.png){: width="50%" height="50%"}
+
+<img src="https://raw.githubusercontent.com/CS-Study-Team/DesignPattern/jjjlyn-patch-2/StructuralPattern/Proxy/tiktok.png" width="30%" height="30%">
 
 먼저 연산이 오래 걸리는 객체를 생성하여 반환하는 기능을 가진 Loader 인터페이스를 선언한다. 
 ```kotlin
