@@ -106,12 +106,12 @@ Authorizer 인터페이스를 구현한 프록시 클래스를 정의한다. 허
 ```kotlin
 class ProxyAuthorizer: Authorizer {
     private val listPermissiveDomain = setOf("gmail.com", "naver.com", "hanmail.net")
-    private val domainReceiver = DomainAuthorizer()
+    private val domainAuthorizer = DomainAuthorizer()
 
     override fun authorize(email: String) {
         val idx = email.indexOf("@")
         if(listPermissiveDomain.contains(email.substring(idx + 1))){
-            domainReceiver.authorize(email)
+            domainAuthorizer.authorize(email)
         } else {
             println("해당 도메인을 지원하지 않습니다.")
         }
