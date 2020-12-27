@@ -122,11 +122,11 @@ class ProxyAuthorizer: Authorizer {
 클라이언트는 프록시 객체를 통해 도메인 지원 여부에 따라 타깃 객체에 간접적으로 접근할 수 있다.
 ```kotlin
 fun main() {
-    val receiver = ProxyAuthorizer()
-    receiver.authorize("jjjlyn@gmail.com")
-    receiver.authorize("pikachu@naver.com")
-    receiver.authorize("doraemon@hanmail.net")
-    receiver.authorize("babo@hiworks.com")
+    val authorizer = ProxyAuthorizer()
+    authorizer.authorize("jjjlyn@gmail.com")
+    authorizer.authorize("pikachu@naver.com")
+    authorizer.authorize("doraemon@hanmail.net")
+    authorizer.authorize("babo@hiworks.com")
 }
 ```
 
