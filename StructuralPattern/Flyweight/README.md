@@ -17,7 +17,7 @@
 3. Factory Method 패턴을 적용하여 Flyweight 객체를, 있으면 가져오거나 없으면 생성한다.
 
 ## 참여자
-<img src="https://github.com/CS-Study-Team/DesignPattern/blob/jjjlyn-patch-2/StructuralPattern/Flyweight/structure_of_flyweight_pattern.png" width="70%" height="70%">
+<img src="https://raw.githubusercontent.com/CS-Study-Team/DesignPattern/main/StructuralPattern/Flyweight/structure_of_flyweight_pattern.png" width="70%" height="70%">
 
 1. Flyweight : 추상 클래스
 2. ConcreteFlyweight : Flyweight 추상클래스를 구현한 서브 클래스
@@ -27,13 +27,13 @@
 
 ## 예시
 
-<img src="https://github.com/CS-Study-Team/DesignPattern/blob/jjjlyn-patch-2/StructuralPattern/Flyweight/example_ui_of_flypattern.png" width="30%" height="30%">
+<img src="https://raw.githubusercontent.com/CS-Study-Team/DesignPattern/main/StructuralPattern/Flyweight/example_ui_of_flypattern.png" width="30%" height="30%">
 
 한 화면에서 같은 이미지 파일이지만, 크기만 다르게 여러 곳에 배치되는 경우가 있다. 동일한 리소스를 여러 번 생성하는 것은 자원 낭비일 것이다. Flyweight 패턴을 사용하면 한 번만 이미지를 생성하고, 이를 장소마다 재사용할 수 있게 된다.
 
 먼저 State를 나눈다. 이미지 파일에서 바뀌지 않는 Intrinsic State는 파일명(fileName), 외부 환경에 따라 바뀌는 변수는 위치(position)와 이미지 크기(size)로 구분할 수 있다.
 
-<img src="https://github.com/CS-Study-Team/DesignPattern/blob/jjjlyn-patch-2/StructuralPattern/Flyweight/dividing_state_of_flyweight.png" width="30%" height="30%">
+<img src="https://raw.githubusercontent.com/CS-Study-Team/DesignPattern/main/StructuralPattern/Flyweight/dividing_state_of_flyweight.png" width="30%" height="30%">
 
 이미지 로딩에 Flyweight Pattern을 적용한 예시는 다음과 같다.
 
