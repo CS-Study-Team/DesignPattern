@@ -76,3 +76,8 @@ fun main() {
   processorFacade.processAll()
 }
 ```
+
+## 실행결과
+<p>
+  <img src="https://user-images.githubusercontent.com/37705123/103436705-35ea8500-4c62-11eb-8f49-159b9c519404.png" width="600" />
+</p>
