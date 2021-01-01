@@ -14,25 +14,25 @@
 ## 구현 예시(변경 전)
 ```kotlin
 interface Package {
-	fun process()
+  fun process()
 }
 
 class PackageA : Package {
-	override fun process() {
-		println("패키지A 실행")
-	}
+  override fun process() {
+    println("패키지A 실행")
+  }
 }
 
 class PackageB : Package {
-	override fun process() {
-		println("패키지B 실행")
-	}
+  override fun process() {
+    println("패키지B 실행")
+  }
 }
 
 class PackageC : Package {
-	override fun process() {
-		println("패키지C 실행")
-	}
+  override fun process() {
+    println("패키지C 실행")
+  }
 }
 
 fun main() {
@@ -54,25 +54,25 @@ interface Processor {
 }
 
 class ProcessorFacade(
-	private val packageA: PackageA,
-	private val packageB: PackageB,
-	private val packageC: PackageC
+  private val packageA: PackageA,
+  private val packageB: PackageB,
+  private val packageC: PackageC
 ) : Processor {
 	
-	override fun processAll() {
-		packageA.process()
-		packageB.process()
-		packageC.process()
-	}
+  override fun processAll() {
+    packageA.process()
+    packageB.process()
+    packageC.process()
+  }
 }
 
 fun main() {
-	val processorFacade = ProcessorFacade(
-		packageA = PackageA(),
-		packageB = PackageB(),
-		packageC = PackageC()
-	)
+  val processorFacade = ProcessorFacade(
+    packageA = PackageA(),
+    packageB = PackageB(),
+    packageC = PackageC()
+  )
 	
-	processorFacade.processAll()
+  processorFacade.processAll()
 }
 ```
