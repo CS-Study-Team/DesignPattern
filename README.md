@@ -31,8 +31,8 @@ Gof의 디자인 패턴책 뽀개기
 ### [**Behavioral Pattern**](CreationalPattern)
 - [Chain of Responsibility](BehavioralPattern/ChainOfResponsibility) - N/A
 - [Command](BehavioralPattern/Command) - N/A
-- [Interpreter](BehavioralPattern/Interpreter) - N/A
-- [Iterator](BehavioralPattern/Iterator) - N/A
+- [Interpreter](BehavioralPattern/Interpreter) - 김태성
+- [Iterator](BehavioralPattern/Iterator) - 김태성
 - [Mediator](BehavioralPattern/Mediator) - N/A
 - [Memento](BehavioralPattern/Memento) - N/A
 - [Observer](BehavioralPattern/Observer) - N/A
