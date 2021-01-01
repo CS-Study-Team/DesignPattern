@@ -67,3 +67,9 @@ fun main() {
     println(christmasTree2020.decorate())
 }
 ```
+
+* 실행결과
+<p>
+  <img src="https://user-images.githubusercontent.com/37705123/103436343-c5416980-4c5d-11eb-8916-a9f53c01e392.png" width="800" />
+</p>
+
