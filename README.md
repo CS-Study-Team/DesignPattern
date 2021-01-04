@@ -33,9 +33,9 @@ Gof의 디자인 패턴책 뽀개기
 - [Command](BehavioralPattern/Command) - 이재성
 - [Interpreter](BehavioralPattern/Interpreter) - 김태성
 - [Iterator](BehavioralPattern/Iterator) - 김태성
-- [Mediator](BehavioralPattern/Mediator) - N/A
+- [Mediator](BehavioralPattern/Mediator) - 김태성
 - [Memento](BehavioralPattern/Memento) - N/A
-- [Observer](BehavioralPattern/Observer) - N/A
+- [Observer](BehavioralPattern/Observer) - 김태성
 - [State](BehavioralPattern/State) - N/A
 - [Strategy](BehavioralPattern/Strategy) - N/A
 - [Template Method](BehavioralPattern/TemplateMethod) - N/A
