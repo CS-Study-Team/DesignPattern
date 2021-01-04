@@ -28,9 +28,9 @@ Gof의 디자인 패턴책 뽀개기
 - [Facade](StructuralPattern/Facade) - 이오형
 - [Flyweight](StructuralPattern/Flyweight) - 정린
 - [Proxy](StructuralPattern/Proxy) - 정린
-### [**Behavioral Pattern**](CreationalPattern)
-- [Chain of Responsibility](BehavioralPattern/ChainOfResponsibility) - N/A
-- [Command](BehavioralPattern/Command) - N/A
+### [**Behavioral Pattern**](BehavioralPattern)
+- [Chain of Responsibility](BehavioralPattern/ChainOfResponsibility) - 이재성
+- [Command](BehavioralPattern/Command) - 이재성
 - [Interpreter](BehavioralPattern/Interpreter) - 김태성
 - [Iterator](BehavioralPattern/Iterator) - 김태성
 - [Mediator](BehavioralPattern/Mediator) - N/A
