@@ -37,6 +37,6 @@ Gof의 디자인 패턴책 뽀개기
 - [Memento](BehavioralPattern/Memento) - N/A
 - [Observer](BehavioralPattern/Observer) - N/A
 - [State](BehavioralPattern/State) - N/A
-- [Strategy](BehavioralPattern/Strategy) - N/A
-- [Template Method](BehavioralPattern/TemplateMethod) - N/A
-- [Visitor](BehavioralPattern/Visitor) - N/A
+- [Strategy](BehavioralPattern/Strategy) - 정린
+- [Template Method](BehavioralPattern/TemplateMethod) - 정린
+- [Visitor](BehavioralPattern/Visitor) - 이재성
