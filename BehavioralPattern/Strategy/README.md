@@ -20,7 +20,7 @@ abstract class Converter {
 }
 ```
 
-case by case로 Converter class를 implements 하여 상속하면 코드 중복을 야기할 수 있다. Converver class의 구현체인 HDMIToHDMIConverter와 CTypeToHDMIConverter는 같은 계층(hirarchy)에 위치하고 있기 때문에 
+case by case로 Converter class를 implements 하여 상속하면 코드 중복을 야기할 수 있다. Converver class의 구현체인 HDMIToHDMIConverter와 CTypeToHDMIConverter는 같은 계층(hirarchy)에 위치하고 있기 때문에 코드 중복을 줄인답시고 같은 계층의 클래스를 상속하면 UML 관계도가 난잡해 질 것이다.
 ```kotlin
 class HDMIToHDMIConverter : Converter {
   override fun input(){
