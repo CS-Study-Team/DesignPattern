@@ -7,12 +7,10 @@
 컴퓨터 본체 혹은 노트북에 모니터를 연결해서 사용하고 싶다. 보통 본체의 영상 입력 단자(vga, dvi, hdmi, c type 멀티포트, usb 3.0 등의 포맷)에서 모니터 출력 단자(역시 vga, dvi, hdmi, dp 등의 형식)로 연결하게 된다.
 
 선택할 수 있는 여러 종류의 컨버터가 있다. 
-- HDMI (1 Input Type) to HDMI (1 Input Type)
-- HDMI (1 Input Type) to VGA (1 Input Type)
-- USB 3.0 type (1 Input Type) to HDMI (1 Input Type)
-- c type (1 Input Type) to 2 HDMI (2 Input Type)
-- USB 3.0 type (1 Input Type) to Multi Output Type (VGA, DVI, HDMI, DP 등등)
-
+- HDMI to HDMI
+- HDMI to VGA
+- USB 3.0 type to HDMI
+- c type to HDMI
 
 컨버터를 총칭하는 추상 클래스를 구현한다. 
 ```kotlin
